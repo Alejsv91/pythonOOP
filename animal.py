@@ -6,7 +6,6 @@ class Animal:
     
     def speak(self):
         return "Hace un sonido"
-    pass
 
 class Dog(Animal):
     def speak(self):
