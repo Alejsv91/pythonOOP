@@ -8,7 +8,7 @@ class Rectangle:
         self.height = float(height)
         
         if(self.width < 0 or self.height < 0):
-            raise TypeError("Existe un valor negativo, los valores deben ser positivos")
+            raise ValueError("Existe un valor negativo, los valores deben ser positivos")
     
     def get_area(self):
         return self.width * self.height

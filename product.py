@@ -24,7 +24,7 @@ class Inventory:
         for product in self.products:
             print(f"El nombre del producto es {product.name}, tiene un precio de {product.price} y hay un stock de {product.quantity}")
     
-    def get_inventory_total_amount(self):
+    def calculate_total_value_of_inventory(self):
         total_amount = reduce(lambda acc, x: acc + (x.price * x.quantity), self.products, 0)
         print(f"El monto total del inventario es: {total_amount}")
         return total_amount
@@ -38,5 +38,5 @@ inventory.add_product(atun)
 
 inventory.show_products()
 
-inventory.get_inventory_total_amount()
+inventory.calculate_total_value_of_inventory()
         
