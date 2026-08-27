@@ -1,15 +1,19 @@
 
 class Person():
+    
 	def __init__(self, name):
 		print(f"Ha nacido una persona llamada {name}!")
 		self.name = name
 		self.age = 0
     
 class Bus:
-    max_passengers = 10
-    passenger_list = []
+    
+    max_passengers: int
+    passenger_list: list
+    
     def __init__(self, max_passengers):
         self.max_passengers = max_passengers
+        self.passenger_list = []
         print(f'Bus creado con capacidad de: {self.max_passengers} pasajeros')
     
     def add_passenger(self, person: Person):

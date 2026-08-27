@@ -1,5 +1,19 @@
 class Head:
 	pass
+        
+class Feet:
+    pass
+
+class Leg:
+    def __init__(self, feet: Feet):
+        self.feet = feet
+
+class Hand:
+    pass
+
+class Arm:
+    def __init__(self, hand: Hand):
+        self.hand = hand
 
 class Torso:
     head: Head
@@ -10,20 +24,6 @@ class Torso:
         self.head = head
         self.left_arm = left_arm
         self.right_arm = right_arm
-
-class Arm:
-    def __init__(self, hand: Hand):
-        self.hand = hand
-    
-class Hand:
-    pass
-    
-class Leg:
-    def __init__(self, feet: Feet):
-        self.feet = feet
-
-class Feet:
-    pass
 
 class Human:
     torso: Torso
