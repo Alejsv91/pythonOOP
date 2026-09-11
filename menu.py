@@ -35,15 +35,14 @@ def iniciar_menu():
                 
             else:
                 print(f'Ejecutando opcion {opcion}')
-                ejecutar_accion(opcion)
+                estudiantes = ejecutar_accion(opcion, estudiantes)
                 
         except Exception as e: 
             print(error_sistema)
             print(f"Error: {type(e).__name__}")
             print(e)
 
-def ejecutar_accion(opcion: int):
-    global estudiantes
+def ejecutar_accion(opcion: int, estudiantes: Estudiantes):
     match opcion:
         case 1:
             estudiantes.agregar_estudiante()
@@ -57,3 +56,5 @@ def ejecutar_accion(opcion: int):
             estudiantes = importar_datos_csv()
         case 6:
             print("Finalizando...")
+    
+    return estudiantes
