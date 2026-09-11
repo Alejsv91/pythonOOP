@@ -2,9 +2,9 @@ class Materia:
     nombre: str
     nota: int
     
-    def __init__(self, nombre: str):
+    def __init__(self, nombre: str, nota: str | None = None):
         self.nombre = nombre
-        self.nota = self.validar_nota(nombre)
+        self.nota = self.validar_nota(nombre) if nota is None else int(nota)
     
     def validar_nota(self, nombre: str):
         nota_valida = False

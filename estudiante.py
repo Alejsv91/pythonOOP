@@ -7,11 +7,14 @@ class Estudiante:
     materias = [Materia]
     promedio: int
     
-    def __init__(self):
-        self.nombre = input("Nombre completo del estudiante:")
-        self.seccion = input("Seccíon:")
-        self.materias = [Materia('Español'), Materia('Ingles'), Materia('Sociales'), Materia('Ciencias')]
-        self.sacar_promedio()
+    def __init__(self, nombre: str | None = None, seccion: str | None = None, materias: list[Materia] | None = None, promedio: float | None = None):
+        self.nombre = input("Nombre completo del estudiante:") if nombre is None else nombre
+        self.seccion = input("Seccíon:") if seccion is None else seccion
+        self.materias = [Materia('Español'), Materia('Ingles'), Materia('Sociales'), Materia('Ciencias')] if materias is None else materias
+        if promedio is None:
+            self.sacar_promedio()
+        else:
+            self.promedio = promedio
     
     def mostrar_info_estudiante(self):
         print('-------------------------------------------------')

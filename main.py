@@ -1,5 +1,3 @@
-from estudiantes import Estudiantes
-from estudiante import Estudiante
 from menu import iniciar_menu
 
 print("-------- Sistema academico --------")

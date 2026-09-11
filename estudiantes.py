@@ -3,11 +3,12 @@ from estudiante import Estudiante
 class Estudiantes:
     lista: list[Estudiante]
     
-    def __init__(self):
-        self.lista = []
+    def __init__(self, lista = list[Estudiante] | None):
+        self.lista = [] if list is None else lista
     
     def agregar_estudiante(self):
         agregar_estudiantes = True
+        
         while agregar_estudiantes == True:
             self.lista.append(Estudiante())
             print("Estudiante agreado")
@@ -16,6 +17,7 @@ class Estudiantes:
                 agregar_estudiantes = True
             else:
                 agregar_estudiantes = False
+        
         
     def mostrar_estudiantes(self):
         for estudiante in self.lista:

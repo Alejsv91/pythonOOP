@@ -1,6 +1,8 @@
 import pandas as pd
 import csv
 from estudiantes import Estudiantes
+from estudiante import Estudiante
+from materia import Materia
 
 archivo_nombre = 'estudiantes.csv'
 
@@ -24,5 +26,26 @@ def exportar_datos_csv(estudiantes: Estudiantes):
     print("csv de estudiantes creado")
     
 def importar_datos_csv():
+    lista = []
     df = pd.read_csv(archivo_nombre)
-    print(df)
+    for _, row in df.iterrows():
+        nombre = row['Nombre']
+        seccion = row['Seccion']
+        promedio = row['Promedio']
+        
+        materias = [
+            Materia("Español", row["Español"]),
+            Materia("Ingles", row["Ingles"]),
+            Materia("Sociales", row["Sociales"]),
+            Materia("Ciencias", row["Ciencias"]),
+        ]
+        
+        estudiante = Estudiante(nombre=nombre, 
+                                seccion=seccion, 
+                                promedio=promedio,
+                                materias=materias)
+        
+        lista.append(estudiante)
+        print('Datos importados')
+        
+    return Estudiantes(lista)

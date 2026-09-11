@@ -1,7 +1,6 @@
 from estudiantes import Estudiantes
-from data import exportar_datos_csv
+from data import exportar_datos_csv, importar_datos_csv
 
-estudiantes = Estudiantes()
 error_opcion_invalida = """\033[91m
 --------ERROR--------
 Debe de seleccionar una opción del 1 al 5
@@ -9,7 +8,7 @@ Debe de seleccionar una opción del 1 al 5
 
 error_sistema = """\033[91m
 --------ERROR--------
-Solo puede agregar valores númericos
+Error interno del sistema
 ---------------------\033[0m"""
 
 menu="""
@@ -18,19 +17,20 @@ Opciones:
     2. Mostrar lista de estudiantes
     3. Mostrar top 3 de mejores promedios
     4. Crear csv
-    5. Salir
+    5. Importar estudiantes de csv
+    6. Salir
 Seleccione una opción: """
             
 def iniciar_menu():
-    agregar_estudiantes = True
     opcion = 0
+    estudiantes = Estudiantes()
     
-    while not opcion == 5:
+    while not opcion == 6:
         print('---------- Menú principal ----------')
         try: 
             opcion = int(input(menu))
             
-            if opcion not in range(1, 6):
+            if opcion not in range(1, 7):
                 print(error_opcion_invalida)
                 
             else:
@@ -43,6 +43,7 @@ def iniciar_menu():
             print(e)
 
 def ejecutar_accion(opcion: int):
+    global estudiantes
     match opcion:
         case 1:
             estudiantes.agregar_estudiante()
@@ -53,4 +54,6 @@ def ejecutar_accion(opcion: int):
         case 4: 
             exportar_datos_csv(estudiantes)
         case 5:
+            estudiantes = importar_datos_csv()
+        case 6:
             print("Finalizando...")
