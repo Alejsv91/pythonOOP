@@ -1,5 +1,5 @@
-from adminUser import AdminUser
-from regularUser import RegularUser
+from .adminUser import AdminUser
+from .regularUser import RegularUser
 
 user1= AdminUser("Alvaro")
 user2= RegularUser("Pedro")

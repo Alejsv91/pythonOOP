@@ -1,4 +1,4 @@
-from employee import Employee
+from .employee import Employee
 
 name: str = input("Add the employee name: ")
 salary: float = input("Add the salary: ")

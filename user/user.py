@@ -1,6 +1,9 @@
 from abc import ABC, abstractmethod
+
 class User(ABC):
     _name: str
+    def __init__(self, name: str):
+        self.name = name
     
     @property
     def name(self):
@@ -10,7 +13,6 @@ class User(ABC):
     def name(self, value: str):
         self._name = value
 
-            
     @abstractmethod
     def get_role(self):
         pass

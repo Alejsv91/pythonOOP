@@ -1,7 +1,9 @@
-from user import User
+from .user import User
+
 class AdminUser(User):
     
-    def __init__(self, name):
+    def __init__(self, name: str):
+        super().__init__(name)
         self.permissions = {
             "read": True,
             "write": True,
