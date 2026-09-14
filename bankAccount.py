@@ -6,6 +6,7 @@ class BankAccount:
     
     def deposit(self, amount: float):
         self.balance += amount
+        print("Dinero agregado a la cuenta")
         
     def withdraw(self, amount: float):
         self.balance -= amount
