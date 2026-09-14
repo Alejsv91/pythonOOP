@@ -10,6 +10,7 @@ class BankAccount:
         
     def withdraw(self, amount: float):
         self.balance -= amount
+        print("Dinero retirado")
         
 class SavingAccounts(BankAccount):
     min_balance: float
