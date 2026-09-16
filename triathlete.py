@@ -13,7 +13,7 @@ class Runner:
     def run(self):
         return "Running"
 
-class Triathlete(Person, Swimmer, Cyclist):
+class Triathlete(Person, Swimmer, Cyclist, Runner):
     pass
 
 

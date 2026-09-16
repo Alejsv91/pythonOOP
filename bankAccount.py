@@ -21,7 +21,7 @@ class SavingAccounts(BankAccount):
     
     def withdraw(self, amount):
         if(self.balance - amount < self.min_balance):
-            RuntimeError("La operación no se puede realizar porque la cuenta quedaría por debajo del balance mínimo permitido.")
+            raise RuntimeError("La operación no se puede realizar porque la cuenta quedaría por debajo del balance mínimo permitido.")
         else:
             self.balance -= amount
         
