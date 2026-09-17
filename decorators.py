@@ -20,7 +20,7 @@ test_function("First test", k_test="k value")
 def validate_parameters(func):
     def wrapper(*args):
         for arg in args:
-            if not isinstance(arg, int):
+            if not isinstance(arg, (int, float)):
                 raise ValueError(f"{arg} is not int")
             
         return func(*args)
@@ -34,4 +34,4 @@ def sumar(*args):
 
 print(f"La suma es: {sumar(1,2,3,4,5,6,7)}")
 
-print(f"La segunda suma es: {sumar(1,2,3,4,5,6,7, "T")}")
+print(f"La segunda suma es: {sumar(1,2,3,4,5,6,7, 'T')}")
