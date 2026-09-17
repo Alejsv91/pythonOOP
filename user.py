@@ -21,11 +21,14 @@ class User:
     
 def is_adult(func):
     def wrapper(user: User):
+        if not isinstance(user, User):
+            raise TypeError("Parameter must be an user")
         if user.age < 18:
             raise ValueError(" User is not an adult")
-        else:
-            print("User is adult")
+        
+        print("User is adult")
         return func(user)
+    
     return wrapper
             
 @is_adult
