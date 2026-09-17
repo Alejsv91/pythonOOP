@@ -10,12 +10,9 @@ from node import Node
 
 class DoubleEndedQueue:
     head: Node
-    tail: Node
     
-    def __init__(self, head: Node, tail: Node):
+    def __init__(self, head: Node):
         self.head = head
-        self.head.next = tail
-        self.tail = tail
         
     def push_left(self, node: Node):
         next_node = self.head
@@ -52,7 +49,8 @@ node2 = Node("Node 2")
 node3 = Node("Node 3")
 node4 = Node("Node 4")
 
-deq = DoubleEndedQueue(node1, node2)
+deq = DoubleEndedQueue(node1)
+deq.push_left(node2)
 
 print("---- First deq ----")
 deq.print_structure()
