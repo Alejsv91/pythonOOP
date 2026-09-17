@@ -4,13 +4,7 @@
 # No se permite el uso de tipos de datos compuestos como lists, dicts 
 # o tuples ni módulos como collections.
 
-class Node:
-    data: str
-    next: "Node"
-    
-    def __init__(self, data):
-        self.data = data
-        self.next = None
+from node import Node
         
 class Stack:
     head: Node
