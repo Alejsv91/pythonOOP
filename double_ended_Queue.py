@@ -20,6 +20,9 @@ class DoubleEndedQueue:
         self.head.next = next_node
         
     def pop_left(self):
+        if self.head is None:
+            raise IndexError("Stack is empty")
+        
         if self.head is not None:
             self.head = self.head.next      
     
@@ -32,6 +35,9 @@ class DoubleEndedQueue:
         current_node.next = node    
         
     def pop_right(self):
+        if self.head is None:
+            raise IndexError
+        
         current_node = self.head
         
         while (current_node.next is not None):
