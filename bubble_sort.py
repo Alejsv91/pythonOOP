@@ -1,10 +1,9 @@
 def bubble_sort(my_list: list[int]):
-    for outer_index in range(len(my_list) -1 , 0, -1):
-        for index in range(len(my_list) -1 , 0, -1):
+    for outer_index in range(len(my_list) -1):
+        print(f'iteration index: {outer_index}')
+        for index in range(len(my_list) -1 , outer_index, -1):
             current_value = my_list[index]
             next_value = my_list[index - 1]
-            # print(f"index is {index} and value is {my_list[index]}")
-            # print(f"current value: {current_value} and next value: {next_value}")
             if(current_value < next_value):
                 print(f"{current_value} is less than {next_value}")
                 my_list[index - 1] = current_value
@@ -14,7 +13,7 @@ def bubble_sort(my_list: list[int]):
             else:
                 print(f"{current_value} is higher than {next_value}")
             print(f"---- index is {index} and value is {my_list[index]} ----")
-        print("--- New list ---")
+        print("--- Final list ---")
         print(my_list)
             
             
