@@ -13,15 +13,8 @@ def bubble_sort(my_list: list[int]):
             else:
                 print(f"{current_value} is higher than {next_value}")
             print(f"---- index is {index} and value is {my_list[index]} ----")
-        print("--- Final list ---")
-        print(my_list)
+    print("--- Final list ---")
+    print(my_list)
             
-            
-
 my_list =  [14, 6, 9, 10, 5 ,2 ,1, 15, -1]
-bubble_sort(my_list)
-
-
-
-
-    
+bubble_sort(my_list) 
