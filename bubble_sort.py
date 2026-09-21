@@ -1,4 +1,7 @@
 def bubble_sort(my_list: list[int]):
+    if not isinstance(my_list, list):
+        raise TypeError("This sort only works with a list")
+    
     for outer_index in range(len(my_list) -1):
         print(f'iteration index: {outer_index}')
         for index in range(len(my_list) -1 , outer_index, -1):
@@ -13,13 +16,20 @@ def bubble_sort(my_list: list[int]):
             else:
                 print(f"{current_value} is higher than {next_value}")
             print(f"---- index is {index} and value is {my_list[index]} ----")
-        print("--- Final list ---")
-        print(my_list)
+    print("--- Final list ---")
+    print(my_list)
+    return my_list
             
             
 
 my_list =  [14, 6, 9, 10, 5 ,2 ,1, 15, -1]
 bubble_sort(my_list)
+
+my_list = []
+bubble_sort(my_list)
+
+# my_list = "test"
+# bubble_sort(my_list)
 
 
 
