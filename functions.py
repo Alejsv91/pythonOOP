@@ -4,7 +4,8 @@ global_variable: str = "This is my global variable"
 def first_function():
     print("This is my first function")
     second_function()
-    
+
+# 2 
 def second_function():
     global global_variable
     print("This is my second function")
